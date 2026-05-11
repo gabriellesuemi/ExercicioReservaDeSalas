@@ -53,4 +53,9 @@ public class GerenciadorReservas {
         reserva.cancelar();
         reserva.getUsuario().atualizar("Reserva cancelada.");
     }
+
+    public void alterarReserva(Reserva reserva, LocalDateTime novoInicio, LocalDateTime novoFim) {
+        reserva.alterarHorario(novoInicio, novoFim);
+        reserva.getUsuario().atualizar("Reserva alterada.");
+    }
 }
