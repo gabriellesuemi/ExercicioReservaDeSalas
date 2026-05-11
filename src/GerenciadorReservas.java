@@ -29,4 +29,23 @@ public class GerenciadorReservas {
             usuario.atualizar("Não foi possível criar a reserva. Existe conflito de horário.");
         }
     }
+
+    public void listarSalasDisponiveis(LocalDateTime inicio, LocalDateTime fim) {
+
+        System.out.println("Salas disponíveis:");
+
+        for (Sala sala : repositorio.getSalas()) {
+
+            Reserva reservaTeste = new Reserva(
+                    new Estudante("Teste"),
+                    sala,
+                    inicio,
+                    fim
+            );
+
+            if (politica.podeReservar(reservaTeste, repositorio.getReservas())) {
+                System.out.println(sala);
+            }
+        }
+    }
 }
