@@ -87,5 +87,5 @@ java -cp src Main
 
 # Autores
 
-* Gabrielle Suemi Iqueji Alencar
+* Gabrielle Suemi Iquejiri Alencar
 * Lívia Costa da Silva
