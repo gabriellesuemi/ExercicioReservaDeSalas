@@ -48,4 +48,9 @@ public class GerenciadorReservas {
             }
         }
     }
+
+    public void cancelarReserva(Reserva reserva) {
+        reserva.cancelar();
+        reserva.getUsuario().atualizar("Reserva cancelada.");
+    }
 }
