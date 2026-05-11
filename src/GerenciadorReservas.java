@@ -58,4 +58,20 @@ public class GerenciadorReservas {
         reserva.alterarHorario(novoInicio, novoFim);
         reserva.getUsuario().atualizar("Reserva alterada."  + reserva);
     }
+
+    public void gerarRelatorioDiario(int ano, int mes, int dia) {
+
+        System.out.println("Relatório diário de reservas:");
+
+        for (Reserva reserva : repositorio.getReservas()) {
+
+            if (reserva.isConfirmada()
+                && reserva.getInicio().getYear() == ano
+                && reserva.getInicio().getMonthValue() == mes
+                && reserva.getInicio().getDayOfMonth() == dia) {
+
+                System.out.println(reserva);
+            }
+        }
+    }
 }
