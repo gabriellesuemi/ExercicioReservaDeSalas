@@ -24,7 +24,7 @@ public class GerenciadorReservas {
 
         if (politica.podeReservar(novaReserva, repositorio.getReservas())) {
             repositorio.getReservas().add(novaReserva);
-            usuario.atualizar("Reserva criada com sucesso.");
+            usuario.atualizar("Reserva criada com sucesso." + novaReserva);
         } else {
             usuario.atualizar("Não foi possível criar a reserva. Existe conflito de horário.");
         }
@@ -56,6 +56,6 @@ public class GerenciadorReservas {
 
     public void alterarReserva(Reserva reserva, LocalDateTime novoInicio, LocalDateTime novoFim) {
         reserva.alterarHorario(novoInicio, novoFim);
-        reserva.getUsuario().atualizar("Reserva alterada.");
+        reserva.getUsuario().atualizar("Reserva alterada."  + reserva);
     }
 }
